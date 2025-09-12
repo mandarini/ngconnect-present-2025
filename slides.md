@@ -13,13 +13,13 @@ css: unocss
 wakeLock: "build"
 ---
 
-# What happens when Angular meets Supabase?
+# Multiplayer mayhem with Angular + Supabase
 
-## Multiplayer mayhem — in the best way.
+## Katerina Skroumpelou
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Cookie Catcher - Angular Connect 2025 <carbon:arrow-right class="inline"/>
+    Angular Connect 2025 <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
