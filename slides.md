@@ -29,6 +29,10 @@ wakeLock: "build"
   <logos-supabase-icon />
 </div>
 
+<!--
+Hi everyone! I'm excited to show you what happens when we combine Angular's reactive power with Supabase's real-time capabilities. We're going to build a multiplayer party game that handles unlimited players, live cursors, and real-time interactions. By the end of this talk, you'll know exactly how to build your own real-time multiplayer experiences.
+-->
+
 ---
 layout: center
 class: text-center
@@ -51,6 +55,10 @@ class: text-center
 <img src="https://images.unsplash.com/photo-1494790108755-2616c0763408?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="rounded-full w-64 mx-auto shadow-lg">
 </div>
 </div>
+
+<!--
+Quick intro - I'm Katerina, a Software Engineer at Supabase. I love cats and chocolate, I love being on stage talking to all of you, and I'm a Google Developer Expert for Angular and Maps. Today I want to show you how Angular and Supabase create the perfect stack for real-time applications.
+-->
 
 ---
 layout: center
@@ -83,6 +91,10 @@ class: text-center
 
 </div>
 
+<!--
+Before we dive into the multiplayer magic, let me quickly introduce Supabase. It's the open source Firebase alternative, but with some key differences. Instead of NoSQL, you get a full PostgreSQL database with all the SQL power you know and love. Your APIs are auto-generated from your database schema - no backend code required. And everything is built with modern developer experience in mind, including full TypeScript support.
+-->
+
 ---
 layout: center
 class: text-center
@@ -113,6 +125,10 @@ class: text-center
 </div>
 
 </div>
+
+<!--
+Supabase gives you everything you need to build modern applications. You get a PostgreSQL database that can even handle vector embeddings for AI features. Authentication is built-in with social logins, email, phone, magic links - whatever you need. And file storage comes with a global CDN and on-the-fly image transformations. It's like having an entire backend team in a single platform.
+-->
 
 ---
 layout: center
@@ -145,6 +161,10 @@ class: text-center
 
 </div>
 
+<!--
+But here's what makes Supabase special for our use case. The Realtime engine can stream database changes, handle broadcast messages, and manage presence - all over a single WebSocket connection. Edge Functions give you globally distributed TypeScript functions for server-side logic. And Row Level Security is built right into the database, so your data is secure by default. This is why it's perfect for multiplayer applications.
+-->
+
 ---
 layout: center
 class: text-center
@@ -166,6 +186,12 @@ class: text-center
 - Compete on **live leaderboard!**
 
 </div>
+
+<!--
+Let me show you what we're building. This is Cookie Catcher - a real-time multiplayer game where everyone in the room can join on their phones right now. You catch falling cookies and cats, compete on live leaderboards, and see each other's cursors moving in real-time. Go ahead, scan this QR code and join the game!
+
+[Show live demo with audience participation]
+-->
 
 ---
 layout: center
@@ -192,6 +218,10 @@ class: text-center
 </div>
 
 </div>
+
+<!--
+Building multiplayer games is notoriously difficult. You have race conditions when multiple players try to claim the same item, you need to keep everyone's state in sync, manage connections dropping and reconnecting, work across desktop and mobile, and do it all performantly. Traditional approaches require complex WebSocket servers, Redis for state management, and lots of custom infrastructure.
+-->
 
 ---
 layout: center
@@ -220,6 +250,10 @@ class: text-center
 </div>
 
 </div>
+
+<!--
+Enter Angular Signals and Supabase Realtime. Signals give us reactive state that automatically updates our UI when data changes. Supabase handles all the complex real-time infrastructure. This computed leaderboard automatically updates whenever scores change - no manual DOM manipulation needed.
+-->
 
 ---
 layout: two-cols
@@ -255,6 +289,10 @@ this.supabase
 
 </div>
 
+<!--
+Here's how we get live updates. Supabase listens to PostgreSQL changes through the Write-Ahead Log and sends them over WebSockets. When a score updates in the database, we immediately update our signal, which triggers all dependent computed values and UI updates automatically. No polling, no manual refresh needed.
+-->
+
 ---
 layout: center
 class: text-center
@@ -282,6 +320,10 @@ class: text-center
 </div>
 
 </div>
+
+<!--
+Presence tracking shows who's online in real-time. When someone joins, everyone sees a notification. When they disconnect - even if their browser crashes - they're automatically removed from the presence state. This uses a CRDT under the hood to handle the distributed state synchronization.
+-->
 
 ---
 layout: two-cols
@@ -320,6 +362,10 @@ onMouseMove(event: MouseEvent) {
 
 </div>
 
+<!--
+For the live cursors, we use Supabase Broadcast to send rapid, ephemeral messages. Every cursor movement is throttled to 50ms and broadcast to all connected clients. On mobile, we send touch ripples instead of cursor positions. It's like having everyone's mouse pointer visible on your screen.
+-->
+
 ---
 layout: center
 class: text-center
@@ -348,6 +394,10 @@ class: text-center
 
 </div>
 
+<!--
+Race conditions are solved with atomic database operations in Edge Functions. When two players tap the same cookie simultaneously, only one can claim it. The database update only succeeds if the cookie is still unclaimed and not expired. This prevents duplicate scoring and ensures fair gameplay.
+-->
+
 ---
 layout: center
 class: text-center
@@ -375,6 +425,10 @@ class: text-center
 </div>
 
 </div>
+
+<!--
+Performance is critical for real-time games. We use OnPush change detection so Angular only updates when our signals change. The computed activeCookies automatically filters out claimed and expired cookies. Our smooth 60fps animations run independently of the Angular change detection cycle.
+-->
 
 ---
 layout: two-cols
@@ -410,6 +464,10 @@ CREATE POLICY "Users can read own sessions"
 
 </div>
 
+<!--
+Security is built-in with Row Level Security policies. We enable RLS on all tables and create policies that allow real-time subscriptions. The 'FOR ALL' policy is needed for WebSocket subscriptions to work, but actual writes are protected through Edge Functions using the service role key.
+-->
+
 ---
 layout: center
 class: text-center
@@ -437,6 +495,10 @@ class: text-center
 </div>
 
 </div>
+
+<!--
+The game works seamlessly across devices. We detect mobile devices and adapt the interaction model - desktop shows cursor trails, mobile shows touch ripples. The same real-time infrastructure handles both interaction types, creating a unified multiplayer experience regardless of device.
+-->
 
 ---
 layout: two-cols
@@ -475,6 +537,10 @@ const { data } = await supabase
 
 </div>
 
+<!--
+The developer experience is fantastic. Supabase generates TypeScript types from your database schema, giving you full type safety. Your IDE knows about every table, column, and relationship. Real-time subscriptions, database queries, and Edge Functions all have complete type support.
+-->
+
 ---
 layout: center
 class: text-center
@@ -502,6 +568,10 @@ class: text-center
 </div>
 
 </div>
+
+<!--
+The architecture is beautifully simple. Angular handles the reactive UI with signals and components. Supabase provides the database, real-time engine, and serverless functions. One WebSocket connection handles all real-time features - database changes, presence, and broadcast messages.
+-->
 
 ---
 layout: center
@@ -532,6 +602,10 @@ class: text-center
 
 </div>
 
+<!--
+This isn't just a demo - it's production-ready. Supabase Realtime has been benchmarked with over 250,000 concurrent users. Updates have sub-50ms latency thanks to the global edge network. Everything scales automatically, and you get built-in monitoring. No DevOps team required.
+-->
+
 ---
 layout: center
 class: text-center
@@ -559,6 +633,10 @@ class: text-center
 </div>
 
 </div>
+
+<!--
+Here's why this combination works so well. Angular Signals are reactive by default, perfect for real-time data. Everything is type-safe from database to UI. It scales to massive user counts without configuration. Security is built-in with RLS policies. And it's simple - one WebSocket connection handles all your real-time needs.
+-->
 
 ---
 layout: center
@@ -593,6 +671,10 @@ class: text-center
 
 </div>
 
+<!--
+This isn't just for games. You can build chat applications with typing indicators, collaborative dashboards where everyone sees live data updates, document editors like Google Docs, live tracking applications, interactive polls for presentations like this one. Any app that needs real-time collaboration can use these patterns.
+-->
+
 ---
 layout: center
 class: text-center
@@ -620,6 +702,10 @@ class: text-center
 - 💼 [github.com/mandarini](https://github.com/mandarini)
 
 </div>
+
+<!--
+That's how we build real-time multiplayer experiences with Angular and Supabase. The combination of reactive signals and real-time infrastructure makes complex multiplayer features surprisingly simple to implement. Thank you for your attention - I'd love to answer any questions you have!
+-->
 
 <style>
 h1 {
