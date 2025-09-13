@@ -486,6 +486,9 @@ class: text-center
 
 <div class="bg-green-50 p-6 rounded-lg">
 <div class="text-4xl mb-4">🎮</div>
+<h3 class="text-green-600 font-bold">Adaptive interactions</h3>
+</div>
+
 <div class="bg-purple-50 p-6 rounded-lg">
 <div class="text-4xl mb-4">🌍</div>
 <h3 class="text-purple-600 font-bold">Unified multiplayer experience</h3>
