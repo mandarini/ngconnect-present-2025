@@ -70,6 +70,17 @@ layout: center
 class: text-center
 ---
 
+<img src="/images/AngularConnect.jpg" class="w-full h-full object-contain" alt="Angular Connect">
+
+<!--
+[Speaker notes for AngularConnect image slide]
+-->
+
+---
+layout: center
+class: text-center
+---
+
 # What is Supabase?
 
 ## The Postgres development platform.
