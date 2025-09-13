@@ -52,7 +52,7 @@ class: text-center
 
 </div>
 <div>
-<img src="/images/placeholder.png" class="rounded-full w-64 mx-auto shadow-lg bg-gray-200 border-4 border-gray-300">
+<img src="/images/katsup.jpg" class="rounded-full w-64 mx-auto shadow-lg">
 </div>
 </div>
 
