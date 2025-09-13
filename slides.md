@@ -170,27 +170,34 @@ layout: center
 class: text-center
 ---
 
-# Let's Play Together!
+# Supabase + AI Tools
 
-## 🍪 Cookie Catcher Game
+## Model Context Protocol (MCP)
 
-<div class="text-6xl mb-8">🎮</div>
+<div class="grid grid-cols-3 gap-8 mt-12">
 
-**https://ngdemo-sb.netlify.app**
+<div class="bg-blue-50 p-6 rounded-lg">
+<div class="text-4xl mb-4">🤖</div>
+<h3 class="text-blue-600 font-bold">AI Integration</h3>
+<p class="text-sm text-gray-600 mt-2">Connect Supabase to AI tools</p>
+</div>
 
-<div class="bg-gray-800 text-white p-6 rounded-lg mt-8">
+<div class="bg-green-50 p-6 rounded-lg">
+<div class="text-4xl mb-4">🔧</div>
+<h3 class="text-green-600 font-bold">Setup & Management</h3>
+<p class="text-sm text-gray-600 mt-2">AI helps configure projects</p>
+</div>
 
-**Rules:**
-- Catch cookies 🍪 = **1 point**
-- Catch cats 🐱 = **3 points**
-- Compete on **live leaderboard!**
+<div class="bg-purple-50 p-6 rounded-lg">
+<div class="text-4xl mb-4">📊</div>
+<h3 class="text-purple-600 font-bold">Query & Analyze</h3>
+<p class="text-sm text-gray-600 mt-2">Natural language database queries</p>
+</div>
 
 </div>
 
 <!--
-Let me show you what we're building. This is Cookie Catcher - a real-time multiplayer game where everyone in the room can join on their phones right now. You catch falling cookies and cats, compete on live leaderboards, and see each other's cursors moving in real-time. Go ahead, scan this QR code and join the game!
-
-[Show live demo with audience participation]
+[Speaker notes for AI Tools slide]
 -->
 
 ---
@@ -198,7 +205,87 @@ layout: center
 class: text-center
 ---
 
-# Building Real-time Multiplayer is Hard
+# AI Tools in Action
+
+## Works with Your Favorite Tools
+
+<div class="grid grid-cols-3 gap-8 mt-12">
+
+<div class="bg-blue-50 p-6 rounded-lg">
+<div class="text-4xl mb-4">💻</div>
+<h3 class="text-blue-600 font-bold">Cursor</h3>
+<p class="text-sm text-gray-600 mt-2">AI pair programming with database context</p>
+</div>
+
+<div class="bg-green-50 p-6 rounded-lg">
+<div class="text-4xl mb-4">🤖</div>
+<h3 class="text-green-600 font-bold">Claude</h3>
+<p class="text-sm text-gray-600 mt-2">Chat with your database schema</p>
+</div>
+
+<div class="bg-purple-50 p-6 rounded-lg">
+<div class="text-4xl mb-4">⚡</div>
+<h3 class="text-purple-600 font-bold">Warp</h3>
+<p class="text-sm text-gray-600 mt-2">Terminal AI with Supabase commands</p>
+</div>
+
+</div>
+
+<div class="mt-8 text-gray-600">
+<em>Video Demo: Setting up project with AI assistance</em>
+</div>
+
+<!--
+[Speaker notes for AI Tools in Action slide]
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# AI + No-Code Platforms
+
+## Perfect for Bolt.new & Loveable
+
+<div class="grid grid-cols-3 gap-8 mt-12">
+
+<div class="bg-blue-50 p-6 rounded-lg">
+<div class="text-4xl mb-4">🚀</div>
+<h3 class="text-blue-600 font-bold">Rapid Prototyping</h3>
+<p class="text-sm text-gray-600 mt-2">From idea to app in minutes</p>
+</div>
+
+<div class="bg-green-50 p-6 rounded-lg">
+<div class="text-4xl mb-4">🔗</div>
+<h3 class="text-green-600 font-bold">Seamless Integration</h3>
+<p class="text-sm text-gray-600 mt-2">AI understands Supabase patterns</p>
+</div>
+
+<div class="bg-purple-50 p-6 rounded-lg">
+<div class="text-4xl mb-4">📱</div>
+<h3 class="text-purple-600 font-bold">Full-Stack Apps</h3>
+<p class="text-sm text-gray-600 mt-2">Database, auth, and UI generated together</p>
+</div>
+
+</div>
+
+<div class="mt-8 text-gray-600">
+<em>Video Demo: Building with Bolt.new</em>
+</div>
+
+<!--
+[Speaker notes for AI + No-Code Platforms slide]
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# The Challenge
+
+## Building Real-time Multiplayer is Hard
 
 <div class="grid grid-cols-3 gap-8 mt-12">
 
@@ -256,10 +343,38 @@ Enter Angular Signals and Supabase Realtime. Signals give us reactive state that
 -->
 
 ---
+layout: center
+class: text-center
+---
+
+# The Demo
+
+## 🍪 Cookie Catcher Game
+
+<div class="text-6xl mb-8">🎮</div>
+
+<div class="bg-gray-800 text-white p-6 rounded-lg mt-8">
+
+**Rules:**
+- Catch cookies 🍪 = **1 point**
+- Catch cats 🐱 = **3 points**
+- Compete on **live leaderboard!**
+
+</div>
+
+<div class="mt-8 text-gray-600">
+<em>Live link will be shared later</em>
+</div>
+
+<!--
+[Speaker notes for The Demo slide]
+-->
+
+---
 layout: two-cols
 ---
 
-# Live Data Subscriptions
+# Real-time Database Changes
 
 ```typescript
 // Subscribe to real-time changes
@@ -276,7 +391,7 @@ this.supabase
 
 <div class="pl-8">
 
-## Real-time Database Changes
+## Live Data Subscriptions
 
 - **PostgreSQL** change streams
 - **WebSocket** delivery  
@@ -298,9 +413,9 @@ layout: center
 class: text-center
 ---
 
-# Who's Online Right Now
+# Presence Tracking
 
-## Presence Tracking
+## Who's Online Right Now
 
 <div class="grid grid-cols-3 gap-8 mt-12">
 
@@ -329,7 +444,7 @@ Presence tracking shows who's online in real-time. When someone joins, everyone 
 layout: two-cols
 ---
 
-# See Everyone's Interactions
+# Live Cursor Tracking
 
 ```typescript
 // Track cursor position
@@ -349,7 +464,7 @@ onMouseMove(event: MouseEvent) {
 
 <div class="pl-8">
 
-## Live Cursor Tracking
+## See Everyone's Interactions
 
 - **Desktop:** Mouse cursors
 - **Mobile:** Touch ripples
@@ -371,9 +486,9 @@ layout: center
 class: text-center
 ---
 
-# Solving Race Conditions
+# Atomic Operations
 
-## Atomic Operations
+## Solving Race Conditions
 
 <div class="grid grid-cols-3 gap-8 mt-12">
 
@@ -403,9 +518,41 @@ layout: center
 class: text-center
 ---
 
-# 60fps with 250,000+ Users
+# Let's Play Together!
 
-## Performance at Scale
+## 🍪 Cookie Catcher - Live Demo
+
+<div class="text-6xl mb-8">🎮</div>
+
+## **https://ngdemo-sb.netlify.app**
+
+<div class="bg-green-50 p-6 rounded-lg mt-8">
+
+**Everyone join now!**
+- Scan QR code or visit the URL
+- Watch the real-time magic happen
+- See cursors, presence, and live updates
+
+</div>
+
+<div class="mt-8 text-gray-600">
+<em>Interactive break - let audience play for 2-3 minutes</em>
+</div>
+
+<!--
+Let me show you what we're building. This is Cookie Catcher - a real-time multiplayer game where everyone in the room can join on their phones right now. You catch falling cookies and cats, compete on live leaderboards, and see each other's cursors moving in real-time. Go ahead, scan this QR code and join the game!
+
+[Show live demo with audience participation]
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# Performance at Scale
+
+## 60fps with 250,000+ Users
 
 <div class="grid grid-cols-3 gap-8 mt-12">
 
@@ -434,7 +581,7 @@ Performance is critical for real-time games. We use OnPush change detection so A
 layout: two-cols
 ---
 
-# Row Level Security Made Simple
+# Database Security
 
 ```sql
 -- Enable RLS on tables
@@ -451,7 +598,7 @@ CREATE POLICY "Users can read own sessions"
 
 <div class="pl-8">
 
-## Database Security
+## Row Level Security Made Simple
 
 - **Enable** RLS policies
 - **Realtime** subscriptions
@@ -473,9 +620,9 @@ layout: center
 class: text-center
 ---
 
-# Mobile-First Design
+# Cross-Platform Magic
 
-## Cross-Platform Magic
+## Mobile-First Design
 
 <div class="grid grid-cols-3 gap-8 mt-12">
 
@@ -504,7 +651,7 @@ The game works seamlessly across devices. We detect mobile devices and adapt the
 layout: two-cols
 ---
 
-# Type-Safe Real-time Development
+# Developer Experience
 
 ```typescript
 // Generated types from database schema
@@ -524,7 +671,7 @@ const { data } = await supabase
 
 <div class="pl-8">
 
-## Developer Experience
+## Type-Safe Real-time Development
 
 - **Generated** TypeScript types
 - **Full** IDE support
@@ -546,9 +693,9 @@ layout: center
 class: text-center
 ---
 
-# Simple but Powerful
+# Architecture
 
-## Architecture
+## Simple but Powerful
 
 <div class="grid grid-cols-3 gap-8 mt-12">
 
@@ -578,9 +725,9 @@ layout: center
 class: text-center
 ---
 
-# Production-Ready Performance
+# Real-World Results
 
-## Real-World Results
+## Production-Ready Performance
 
 <div class="grid grid-cols-2 gap-8 mt-12">
 
@@ -611,9 +758,9 @@ layout: center
 class: text-center
 ---
 
-# Why Angular + Supabase Works
+# Key Takeaways
 
-## Key Takeaways
+## Why Angular + Supabase Works
 
 <div class="grid grid-cols-3 gap-8 mt-12">
 
@@ -643,9 +790,9 @@ layout: center
 class: text-center
 ---
 
-# Beyond Games
+# What You Can Build
 
-## What You Can Build
+## Beyond Games
 
 <div class="grid grid-cols-2 gap-8 mt-12">
 
