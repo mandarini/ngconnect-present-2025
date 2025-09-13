@@ -524,24 +524,9 @@ class: text-center
 
 <div class="text-6xl mb-8">🎮</div>
 
-<div class="flex items-center justify-center gap-12 mb-8">
-  <div>
-    <img src="/images/game-qr.png" class="w-64 h-64 rounded-lg shadow-lg" alt="QR Code for Cookie Catcher Game">
-  </div>
-  <div class="text-left">
-    <h2 class="text-3xl font-bold mb-4">https://ngdemo-sb.netlify.app</h2>
-    <p class="text-lg text-gray-600">Scan QR code or visit URL</p>
-  </div>
-</div>
-
-
-<div class="bg-green-50 p-6 rounded-lg mt-8">
-
-**Everyone join now!**
-- Scan QR code or visit the URL
-- Watch the real-time magic happen
-- See cursors, presence, and live updates
-
+<div class="flex items-center justify-center gap-12">
+  <img src="/images/game-qr.png" class="w-64 h-64" alt="QR Code">
+  <h2 class="text-4xl font-bold">https://ngdemo-sb.netlify.app</h2>
 </div>
 
 <div class="mt-8 text-gray-600">
