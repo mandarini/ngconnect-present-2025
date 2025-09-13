@@ -626,9 +626,11 @@ class: text-center
 
 
 <!--
-Let me show you what we're building. This is Cookie Catcher - a real-time multiplayer game where everyone in the room can join on their phones right now. You catch falling cookies and cats, compete on live leaderboards, and see each other's cursors moving in real-time. Go ahead, scan this QR code and join the game!
+This is Cookie Catcher - a real-time multiplayer game where everyone in the room can join on their phones right now. You catch falling cookies and cats, compete on live leaderboards, and see each other's cursors moving in real-time. Go ahead, scan this QR code and join the game!
 
-[Show live demo with audience participation]
+3 top winners get supabase swag (1st gets cap, 2nd/3rd get tshirts)
+the rest get cookies
+
 -->
 
 ---
