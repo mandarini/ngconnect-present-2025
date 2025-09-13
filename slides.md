@@ -81,6 +81,18 @@ layout: center
 class: text-center
 ---
 
+<img src="/images/cats.jpg" class="max-w-[90vw] max-h-[80vh] object-contain mx-auto" alt="My cats">
+
+<!--
+[Speaker notes for cats image slide]
+-->
+
+
+---
+layout: center
+class: text-center
+---
+
 # What is Supabase?
 
 ## The Postgres development platform.
