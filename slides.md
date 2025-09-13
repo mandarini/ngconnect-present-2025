@@ -510,7 +510,11 @@ class: text-center
 </div>
 
 <!--
-Race conditions are solved with atomic database operations in Edge Functions. When two players tap the same cookie simultaneously, only one can claim it. The database update only succeeds if the cookie is still unclaimed and not expired. This prevents duplicate scoring and ensures fair gameplay.
+Race conditions are the biggest challenge in multiplayer games - imagine 50 people tapping the same cookie simultaneously. Without proper handling, you'd get duplicate points and frustrated players.
+
+We solve this with a three-layer approach. Edge Functions provide security by running server-side - players can't manipulate the claiming logic. Database-level atomicity is our secret weapon - PostgreSQL treats our conditional update as a single, indivisible operation. The cookie can only be claimed if it's still unclaimed AND not expired, and this check-and-update happens atomically. Finally, our first-tap-wins logic is simple - whoever's request reaches the database first gets the cookie.
+
+The beauty is we don't need complex locking mechanisms. PostgreSQL's ACID properties handle all the concurrency for us. When the atomic operation fails, we return "already claimed" - no duplicate points, no data corruption. This scales beautifully and keeps gameplay fair even under extreme load.
 -->
 
 ---
@@ -529,9 +533,6 @@ class: text-center
   <h2 class="text-4xl font-bold">https://ngdemo-sb.netlify.app</h2>
 </div>
 
-<div class="mt-8 text-gray-600">
-<em>Interactive break - let audience play for 2-3 minutes</em>
-</div>
 
 <!--
 Let me show you what we're building. This is Cookie Catcher - a real-time multiplayer game where everyone in the room can join on their phones right now. You catch falling cookies and cats, compete on live leaderboards, and see each other's cursors moving in real-time. Go ahead, scan this QR code and join the game!
