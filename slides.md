@@ -17,11 +17,14 @@ wakeLock: "build"
 
 ## Katerina Skroumpelou
 
+
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
     Angular Connect 2025 <carbon:arrow-right class="inline"/>
   </span>
 </div>
+
+<p><em>Follow along: connect25-kat.netlify.app</em></p>
 
 <div class="abs-br m-6 text-xl">
   <carbon-logo-angular class="text-red-500" />
@@ -50,6 +53,8 @@ class: text-center
 - Loves to be on stage
 - **GDE** for Angular & Maps
 
+## psyber.city - @psyber.city
+
 </div>
 <div>
 <img src="/images/katsup.jpg" class="rounded-full w-64 mx-auto shadow-lg">
@@ -67,14 +72,14 @@ class: text-center
 
 # What is Supabase?
 
-## The Open Source Firebase Alternative
+## The Postgres development platform.
 
 <div class="grid grid-cols-3 gap-8 mt-12">
 
 <div class="bg-blue-50 p-6 rounded-lg">
 <div class="text-4xl mb-4">🐘</div>
 <h3 class="text-blue-600 font-bold">PostgreSQL Database</h3>
-<p class="text-sm text-gray-600 mt-2">Full SQL database, not NoSQL</p>
+<p class="text-sm text-gray-600 mt-2">Full SQL database</p>
 </div>
 
 <div class="bg-green-50 p-6 rounded-lg">
@@ -172,7 +177,7 @@ class: text-center
 
 # Supabase + AI Tools
 
-## Model Context Protocol (MCP)
+## The Supabase MCP
 
 <div class="grid grid-cols-3 gap-8 mt-12">
 
@@ -207,7 +212,7 @@ class: text-center
 
 # AI Tools in Action
 
-## Works with Your Favorite Tools
+## Vibe coders love us
 
 <div class="grid grid-cols-3 gap-8 mt-12">
 
@@ -444,19 +449,81 @@ Presence tracking shows who's online in real-time. When someone joins, everyone 
 layout: two-cols
 ---
 
+# Effects for Animation Logic
+
+```typescript
+// game.page.ts - Effects track signal changes
+constructor() {
+  effect(() => {
+    const active = this.gameStore.activeCookies();
+    
+    // Find new cookies that haven't been processed yet
+    const newCookies = active.filter(c => 
+      !this.processedCookieIds.has(c.id)
+    );
+    
+    // Add new cookies to animated list
+    if (newCookies.length > 0) {
+      newCookies.forEach(c => {
+        this.processedCookieIds.add(c.id);
+        // Calculate real-time position...
+      });
+    }
+  });
+}
+```
+
+::right::
+
+<div class="pl-8">
+
+## Reactive Animation Updates
+
+- **Effects** run when signals change
+- **Automatic** cookie animation sync
+- **File:** `src/app/pages/game/game.page.ts`
+
+<div class="mt-8 text-center">
+<div class="text-6xl">🎬</div>
+<p class="text-gray-600 mt-4">Animations react to data</p>
+</div>
+
+</div>
+
+<!--
+We see how Angular's signals and effects create reactive animations. The effect automatically runs whenever the activeCookies signal changes - when new cookies are spawned by the admin or claimed by players. 
+
+We track which cookies have been processed to avoid re-animating the same ones. Each new cookie gets added to our animated list with real-time position calculations. This creates smooth, responsive animations that automatically sync with the database state.
+
+The beauty here is that the animation logic is declarative - we describe what should happen when data changes, and Angular's reactivity system handles the when and how. No manual event listeners or complex state management needed.
+-->
+
+---
+layout: two-cols
+---
+
 # Live Cursor Tracking
 
 ```typescript
-// Track cursor position
-@HostListener('mousemove', ['$event'])
+// realtime-cursors.component.ts
+@HostListener('document:mousemove', ['$event'])
 onMouseMove(event: MouseEvent) {
-  throttle(() => {
-    this.presence.track({
-      x: event.clientX,
-      y: event.clientY,
-      user: this.userId
+  if (this.cursorService.isActive() && 
+      !this.cursorService.isMobileDevice()) {
+    const position = this.cursorService.getRelativePosition(event);
+    this.cursorService.updateCursorPosition(position.x, position.y);
+  }
+}
+
+// cursor.service.ts - Throttled broadcast
+updateCursorPosition(x: number, y: number): void {
+  this.throttleTimeout = setTimeout(() => {
+    this.channel.send({
+      type: 'broadcast',
+      event: 'cursor_move',
+      payload: { userId: this.userId, position: { x, y } }
     });
-  }, 50);
+  }, 50); // 50ms throttling
 }
 ```
 
@@ -466,9 +533,10 @@ onMouseMove(event: MouseEvent) {
 
 ## See Everyone's Interactions
 
-- **Desktop:** Mouse cursors
-- **Mobile:** Touch ripples
-- **50ms** update throttling
+- **Desktop:** Mouse cursors with trails
+- **Mobile:** Touch ripples 
+- **50ms** throttling for performance
+- **Files:** `realtime-cursors.component.ts`, `cursor.service.ts`
 
 <div class="mt-8 text-center">
 <div class="text-6xl">👆</div>
@@ -478,7 +546,7 @@ onMouseMove(event: MouseEvent) {
 </div>
 
 <!--
-For the live cursors, we use Supabase Broadcast to send rapid, ephemeral messages. Every cursor movement is throttled to 50ms and broadcast to all connected clients. On mobile, we send touch ripples instead of cursor positions. It's like having everyone's mouse pointer visible on your screen.
+For live cursors, we use @HostListener to capture mouse movements and Supabase Broadcast to send rapid, ephemeral messages. Every cursor movement is throttled to 50ms and broadcast to all connected clients. On mobile, we detect touch events and send ripples instead of cursor positions. It's like having everyone's mouse pointer visible on your screen.
 -->
 
 ---
@@ -530,7 +598,7 @@ class: text-center
 
 <div class="flex items-center justify-center gap-12">
   <img src="/images/game-qr.png" class="w-64 h-64" alt="QR Code">
-  <h2 class="text-4xl font-bold">https://ngdemo-sb.netlify.app</h2>
+  <h2 class="text-4xl font-bold"><a href="https://ngdemo-sb.netlify.app" target="_blank">ngdemo-sb.netlify.app</a></h2>
 </div>
 
 
@@ -822,17 +890,15 @@ layout: center
 class: text-center
 ---
 
-# Thank You!
-
-## Questions?
+# thankz!
 
 <div class="text-6xl mb-8">🍪</div>
 
 <div class="text-xl space-y-4">
 
-**🎮 Demo:** https://ngdemo-sb.netlify.app
+## [ngdemo-sb.netlify.app](https://ngdemo-sb.netlify.app)
 
-**📚 Source Code:** https://github.com/mandarini/ac-demo-sb
+**📚 i can has teh codez:** [github.com/mandarini/ac-demo-sb](https://github.com/mandarini/ac-demo-sb)
 
 </div>
 
